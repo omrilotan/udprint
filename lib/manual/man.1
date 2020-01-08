@@ -1,0 +1,24 @@
+┌─────────────────────┐
+│ udprint: UDP Logger │
+└─────────────────────┘
+💡 Log incoming messages on a user datagram protocol (UDP) socket
+
+
+│ Interactive
+	$ udprint
+
+│ Ordered
+	$ udprint 8125 127.0.0.1
+			   ↑     ↑
+			  port address
+
+│ Unordered
+	$ udprint --port 8125 --address 127.0.0.1
+
+│ Arguments
+	--help        -h {Bool} Print this help document
+	--interactive -i {Bool} Prompt me for user inputs
+	--port        -p {Int}  Port number. Default [8125]
+	--address     -a {Str}  Hostname or IP address. Default [127.0.0.1]
+	--encoding    -e {Str}  The encoding to convert the buffer to string output with. Default [utf8]
+							> one of: utf8, ascii, base64, binary, hex, latin1, ucs2, utf16le

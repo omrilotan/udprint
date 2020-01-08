@@ -1,0 +1,36 @@
+{
+  "name": "udprint",
+  "version": "0.0.0",
+  "description": "💡 Log incoming messages on a UDP socket",
+  "keywords": [
+    "UDP",
+    "datagram",
+    "print",
+    "logger",
+    "debug",
+    "💡"
+  ],
+  "homepage": "https://github.com/omrilotan/udprint#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omrilotan/udprint.git"
+  },
+  "author": "omrilotan",
+  "license": "MIT",
+  "scripts": {
+    "start": "./bin.js",
+    "lint": "eslint . --ext .js"
+  },
+  "main": "index.js",
+  "bin": "bin.js",
+  "man": "manual/man.1",
+  "dependencies": {
+    "inquirer": "^7.0.3",
+    "yargs-parser": "^16.1.0"
+  },
+  "devDependencies": {
+    "@omrilotan/eslint-config": "^1.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-log": "^1.2.3"
+  }
+}
