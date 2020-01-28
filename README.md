@@ -1,4 +1,4 @@
-# udprint: UDP Logger
+# udprint: UDP Logger [![](https://img.shields.io/npm/v/udprint.svg?style=flat-square)](https://www.npmjs.com/package/udprint)
 ## 💡 Log incoming messages on a user datagram protocol (UDP) socket
 
 ```
@@ -7,7 +7,7 @@ $ npx udprint 8125
 
 ## interactive
 ```bash
-$ udprint
+$ udprint -i
 ```
 
 Full params

@@ -23,7 +23,7 @@
   },
   "main": "index.js",
   "bin": "bin.js",
-  "man": "manual/man.1",
+  "man": "lib/manual/man.1",
   "dependencies": {
     "inquirer": "^7.0.3",
     "yargs-parser": "^16.1.0"
