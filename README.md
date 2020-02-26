@@ -1,4 +1,4 @@
-# udprint: UDP Logger [![](https://img.shields.io/npm/v/udprint.svg?style=flat-square)](https://www.npmjs.com/package/udprint)
+# udprint: UDP Logger [![](https://img.shields.io/npm/v/udprint.svg?style=flat-square)](https://www.npmjs.com/package/udprint) ![](https://img.shields.io/github/workflow/status/omrilotan/udprint/Publish?style=flat-square)
 ## 💡 Log incoming messages on a user datagram protocol (UDP) socket
 
 ```

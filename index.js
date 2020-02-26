@@ -14,34 +14,43 @@ module.exports = function udprint({
 	encoding = 'utf8',
 	log = console.log,
 } = {}) {
-	const socket = createSocket('udp4');
+	return new Promise(
+		function (resolve, reject) {
 
-	socket.on('listening', () => {
-		const { address, port } = socket.address();
+			const socket = createSocket('udp4');
 
-		log(
-			[
-				'udprint: UDP Socket listener.',
-				`listening on ${address}:${port}`,
-				'CTRL + C to shutdown',
-			].join('\n'),
-		);
-	});
+			socket.on('error', reject);
 
-	socket.on('message', (message, remote) => {
-		const { address, port } = remote;
-		message = pretty(message.toString(encoding));
+			socket.on('listening', () => {
+				const { address, port } = socket.address();
 
-		log(
-			[
-				`Message received from ${address}:${port} on ${time()}`,
-				message,
-				Array.from({ length: 27 }).join('─'),
-			].join('\n'),
-		);
-	});
+				log(
+					[
+						'udprint: UDP Socket listener.',
+						`listening on ${address}:${port}`,
+						'CTRL + C to shutdown',
+					].join('\n'),
+				);
+				resolve();
+			});
 
-	socket.bind(port, address);
+			socket.on('message', (message, remote) => {
+				const { address, port } = remote;
+				message = pretty(message.toString(encoding));
+
+				log(
+					[
+						`Message received from ${address}:${port} on ${time()}`,
+						message,
+						Array.from({ length: 27 }).join('─'),
+					].join('\n'),
+				);
+			});
+
+			socket.bind(port, address);
+
+		},
+	);
 };
 
 /**

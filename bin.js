@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const { bold, yellow } = require('chalk');
 const { prompt } = require('inquirer');
 const parser = require('yargs-parser');
 const manual = require('./lib/manual');
@@ -36,8 +37,17 @@ async function run({ _, address, encoding, interactive, port}) {
 			({ port, address, encoding } = await ask({ port, address, encoding }));
 		}
 
-		udprint({ port, address, encoding });
+		await udprint({ port, address, encoding });
 	} catch (error) {
+		if (error.code === 'EADDRINUSE') {
+			console.log([
+				`The address ${yellow([error.address, error.port].join(':'))} seems to be in use.`,
+				'I\'m going to re run in interactive mode.',
+				bold('Please enter a different address.'),
+			].join('\n'));
+			return run({ _, address, encoding, interactive: true, port});
+		}
+
 		console.error(error);
 		process.exit(1);
 	}
