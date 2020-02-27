@@ -1,10 +1,12 @@
 {
   "name": "udprint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "💡 Log incoming messages on a UDP socket",
   "keywords": [
     "UDP",
     "datagram",
+    "debugging",
+    "development",
     "print",
     "logger",
     "debug",
