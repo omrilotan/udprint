@@ -10,6 +10,8 @@ $ npx udprint 8125
 $ udprint -i
 ```
 
+![](https://user-images.githubusercontent.com/516342/75452841-9f7f7000-597b-11ea-8c7f-f54c49a81265.gif)
+
 Full params
 ```bash
 $ udprint 8125 127.0.0.1
@@ -26,6 +28,11 @@ $ udprint --address 127.0.0.1 --port 8125 --encoding utf8
 Params support shorthand
 ```bash
 $ udprint -p 8125 -h 127.0.0.1 -e utf8
+```
+
+Get help (full feature list)
+```bash
+$ udprint -h
 ```
 
 Encoding can be one of the following:
