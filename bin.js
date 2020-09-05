@@ -6,7 +6,7 @@ const parser = require('yargs-parser');
 const manual = require('./lib/manual');
 const udprint = require('.');
 
-const [, , ...rest] = process.argv;
+const [ , , ...rest ] = process.argv;
 
 const args = parser(
 	rest,
@@ -27,7 +27,7 @@ args.help
 	: run(args)
 ;
 
-async function run({ _, address, encoding, interactive, port}) {
+async function run({ _, address, encoding, interactive, port }) {
 	try {
 		if (!port && !address) {
 			([ port, address ] = _);
@@ -41,11 +41,11 @@ async function run({ _, address, encoding, interactive, port}) {
 	} catch (error) {
 		if (error.code === 'EADDRINUSE') {
 			console.log([
-				`The address ${yellow([error.address, error.port].join(':'))} seems to be in use.`,
+				`The address ${yellow([ error.address, error.port ].join(':'))} seems to be in use.`,
 				'I\'m going to re run in interactive mode.',
 				bold('Please enter a different address.'),
 			].join('\n'));
-			return run({ _, address, encoding, interactive: true, port});
+			return run({ _, address, encoding, interactive: true, port });
 		}
 
 		console.error(error);
@@ -82,14 +82,14 @@ async function ask({ port, address, encoding }) {
 		type: 'list',
 		default: encoding || 'utf8',
 		choices: [
-			{name: 'utf8'},
-			{name: 'ascii'},
-			{name: 'base64'},
-			{name: 'binary'},
-			{name: 'hex'},
-			{name: 'latin1'},
-			{name: 'ucs2 (alias of utf16le)', value: 'ucs2'},
-			{name: 'utf16le'},
+			{ name: 'utf8' },
+			{ name: 'ascii' },
+			{ name: 'base64' },
+			{ name: 'binary' },
+			{ name: 'hex' },
+			{ name: 'latin1' },
+			{ name: 'ucs2 (alias of utf16le)', value: 'ucs2' },
+			{ name: 'utf16le' },
 		],
 	});
 
