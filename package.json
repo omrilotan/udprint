@@ -29,7 +29,7 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "inquirer": "^7.0.3",
-    "yargs-parser": "^16.1.0"
+    "yargs-parser": "^19.0.4"
   },
   "devDependencies": {
     "@omrilotan/eslint-config": "^1.1.0",
