@@ -44,3 +44,8 @@ Encoding can be one of the following:
 - `utf16le`
 - `hex`
 - `base64`
+
+## Test
+```bash
+echo "This is some data" > /dev/udp/127.0.0.1/8125
+```

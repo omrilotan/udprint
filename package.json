@@ -1,6 +1,6 @@
 {
   "name": "udprint",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "💡 Log incoming messages on a UDP socket",
   "keywords": [
     "UDP",
@@ -29,11 +29,11 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "inquirer": "^7.3.3",
-    "yargs-parser": "^19.0.4"
+    "yargs-parser": "^20.2.4"
   },
   "devDependencies": {
     "@omrilotan/eslint-config": "^1.3.0",
-    "eslint": "^7.8.1",
-    "eslint-plugin-log": "^1.2.4"
+    "eslint": "^7.14.0",
+    "eslint-plugin-log": "^1.2.6"
   }
 }
