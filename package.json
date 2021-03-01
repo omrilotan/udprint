@@ -1,6 +1,6 @@
 {
   "name": "udprint",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "💡 Log incoming messages on a UDP socket",
   "keywords": [
     "UDP",
@@ -21,19 +21,19 @@
   "license": "MIT",
   "scripts": {
     "start": "./bin.js",
-    "lint": "eslint . --ext .js"
+    "lint": "eslint ."
   },
   "main": "index.js",
   "bin": "bin.js",
   "man": "./man/udprint.1",
   "dependencies": {
     "chalk": "^4.1.0",
-    "inquirer": "^7.3.3",
-    "yargs-parser": "^20.2.4"
+    "inquirer": "^8.0.0",
+    "yargs-parser": "^20.2.6"
   },
   "devDependencies": {
     "@omrilotan/eslint-config": "^1.3.0",
-    "eslint": "^7.14.0",
-    "eslint-plugin-log": "^1.2.6"
+    "eslint": "^7.21.0",
+    "eslint-plugin-log": "^1.2.7"
   }
 }
