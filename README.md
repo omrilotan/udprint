@@ -45,6 +45,21 @@ Encoding can be one of the following:
 - `hex`
 - `base64`
 
+Forward traffic to another location
+```bash
+$ udprint -f 127.0.0.1:2003
+```
+
+Clean some of the data from the message, or complete lines:
+```bash
+$ udprint -c '^.*password.*$\n'
+```
+
+Silent mode, in case we're just forwarding messages and don't want to see the output
+```bash
+$ udprint -s
+```
+
 ## Test
 ```bash
 echo "This is some data" > /dev/udp/127.0.0.1/8125
