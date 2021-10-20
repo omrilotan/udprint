@@ -4,8 +4,6 @@ const time = require('./lib/time');
 const sender = require('./lib/sender');
 const cleaner = require('./lib/cleaner');
 
-const noop = () => null;
-
 /**
  * Listen on a UDP port and print results
  * @param  {string}   [options.port='8125']
@@ -23,16 +21,16 @@ module.exports = ({
 	log = console.log,
 	forward,
 	clean,
-	silent
+	silent,
 } = {}) => new Promise(
 	(resolve, reject) => {
 		let send;
 		let replace;
 		if (forward) {
 			if (forward.includes(':')) {
-				send = sender(...forward.split(':'))
+				send = sender(...forward.split(':'));
 			} else {
-				throw new RangeError('forward must include address and port (127.0.0.1:2003)')
+				throw new RangeError('forward must include address and port (127.0.0.1:2003)');
 			}
 		}
 		if (clean) {

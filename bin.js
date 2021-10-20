@@ -33,7 +33,7 @@ async function run({ _, address, encoding, interactive, port, forward, clean, si
 			encoding,
 			forward,
 			clean,
-			silent
+			silent,
 		});
 	} catch (error) {
 		if (error.code === 'EADDRINUSE') {
@@ -41,8 +41,8 @@ async function run({ _, address, encoding, interactive, port, forward, clean, si
 				`The address ${yellow([ error.address, error.port ].join(':'))} seems to be in use.`,
 				'I\'m going to re run in interactive mode.',
 				bold('Please enter a different address.'),
-				error.message
-			].join('\n')
+				error.message,
+			].join('\n');
 			console.error(error);
 			return run({ _, address, encoding, interactive: true, port, forward, clean, silent });
 		}
