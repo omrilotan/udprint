@@ -1,6 +1,6 @@
 {
   "name": "udprint",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "💡 Log incoming messages on a UDP socket",
   "keywords": [
     "UDP",
@@ -26,9 +26,13 @@
   "main": "index.js",
   "bin": "bin.js",
   "man": "./man/udprint.1",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "dependencies": {
     "chalk": "^4.1.2",
     "inquirer": "^8.2.0",
+    "semver": "^7.3.5",
     "yargs-parser": "^20.2.9"
   },
   "devDependencies": {

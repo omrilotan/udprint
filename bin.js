@@ -1,6 +1,14 @@
 #!/usr/bin/env node
 
-const { bold, yellow } = require('chalk');
+const { bold, red, yellow } = require('chalk');
+const semver = require('semver');
+const { engines } = require('./package.json');
+
+if (!semver.satisfies(process.versions.node, engines.node)) {
+	console.error(bold(red(`this tool support node version ${engines.node}. You are running ${process.versions.node}\n`)));
+	process.exit(0);
+}
+
 const manual = require('./man');
 const args = require('./lib/args');
 const ask = require('./lib/ask');

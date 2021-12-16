@@ -7,18 +7,14 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - '14'
+          - '16'
     steps:
-    - uses: actions/checkout@v1
-    - name: Install dependencies
-      run: npm i
-    - name: Check syntax
-      run: npm run lint -- --plugin log
-    - name: Add NPM token
+    - uses: actions/checkout@v2
+    - run: npm i
+    - run: npm run lint -- --plugin log
+    - run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
       if: github.ref == 'refs/heads/main'
-      run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-    - name: Build and Publish
+    - run: npx @lets/publish
       if: github.ref == 'refs/heads/main'
-      run: npx @lets/publish
