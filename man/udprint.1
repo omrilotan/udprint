@@ -22,7 +22,9 @@
   --address     -a {Str}  Hostname or IP address. Default [127.0.0.1]
   --encoding    -e {Str}  The encoding to convert the buffer to string output with. Default [utf8]
                    > one of: utf8, ascii, base64, binary, hex, latin1, ucs2, utf16le
-  --forward     -f {Str}  Instead of printing, pipe to this full address. (127.0.0.1:2003)
+  --forward     -f {Str}  Pipe to this full address. (127.0.0.1:2003)
   --clean       -c {Str}  Pattern to remove from messages. Multiline and case insensitive
                    > Example: '^.*password.*$\n'
-  --silent      -s {Bool} Don't print anything
+  --silent      -s {Bool} Don't print anything (good to use with -f)
+
+Report an issue: https://github.com/omrilotan/udprint/issues/new?body=${node_details}

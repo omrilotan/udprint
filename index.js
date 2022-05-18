@@ -3,6 +3,7 @@ const pretty = require('./lib/pretty');
 const time = require('./lib/time');
 const sender = require('./lib/sender');
 const cleaner = require('./lib/cleaner');
+const { version } = require('./package.json');
 
 /**
  * Listen on a UDP port and print results
@@ -46,7 +47,7 @@ module.exports = ({
 			if (silent) { return resolve(); }
 			log(
 				[
-					'udprint: UDP Socket listener.',
+					`udprint ${version}: UDP Socket listener.`,
 					`listening on ${address}:${port}`,
 					'CTRL + C to shutdown',
 				].join('\n'),
